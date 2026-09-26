@@ -2,14 +2,12 @@
 
 import './App.scss';
 import moviesFromServer from './api/movies.json';
-import { MovieList } from './components/MovieList/MovieList';
+import { MovieList } from './components/MovieList';
 
 export const App = () => (
   <div className="page">
     <div className="page-content">
-      {moviesFromServer.map(movies => (
-        <MovieList movies={movies} />
-      ))}
+      {moviesFromServer.length > 0 && <MovieList movies={moviesFromServer} />}
     </div>
 
     <div className="sidebar" data-cy="Sidebar">
